@@ -62,3 +62,17 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.textDisp {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 20px;
+}
+.textDisp > section {
+  font-size: 60px;
+}
+
+.textDisp > div {
+  align-self: flex-end;
+}
