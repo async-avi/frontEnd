@@ -13,15 +13,27 @@ body {
 #div1 {
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(53, 194, 194);
 }
 #div2 {
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(86, 202, 105);
 }
 #div3 {
   height: 100vh;
   width: 100%;
   background-color: rgb(75, 107, 212);
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: red;
 }
