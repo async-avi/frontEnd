@@ -1,8 +1,10 @@
 import "./index.css";
 import arrow from "../assets/arrow-left.svg";
-import google from "../assets/google.svg";
+import { login } from "../atoms/atom";
+import { useSetRecoilState } from "recoil";
 
 const LoginPage = () => {
+  const LoginUpdater = useSetRecoilState(login);
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <div
@@ -11,7 +13,9 @@ const LoginPage = () => {
       >
         <div className="flex flex-col p-6 bg-white">
           <div className="w-full flex justify-between">
-            <img src={arrow} alt="arrow" width={30} />
+            <button onClick={() => LoginUpdater(!login)}>
+              <img src={arrow} alt="arrow" width={30} />
+            </button>
             <h2 className="text-gray-400 text-lg font-bold">Register</h2>
           </div>
           <div className="h-full p-20">
