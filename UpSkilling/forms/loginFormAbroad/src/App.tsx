@@ -1,10 +1,11 @@
 import { useState } from "react";
+import LoginPage from "./components/LoginPage";
 
 export default function App() {
   const [loginPage, setLoginPage] = useState(false);
   return (
     <>
-      <div className="w-screen h-screen flex justify-center items-center text-white">
+      {/* <div className="w-screen h-screen flex justify-center items-center text-white">
         <button
           className="bg-blue-500 px-4 py-2 rounded-lg mx-2"
           onClick={() => setLoginPage(!loginPage)}
@@ -17,7 +18,8 @@ export default function App() {
         >
           Signup
         </button>
-      </div>
+      </div> */}
+      <LoginPage />
     </>
   );
 }

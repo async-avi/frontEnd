@@ -1,0 +1,6 @@
+#banda {
+  background-image: url("../assets/clouds.jpg");
+  background-size: cover;
+  background-position: 27%;
+  position: relative;
+}
