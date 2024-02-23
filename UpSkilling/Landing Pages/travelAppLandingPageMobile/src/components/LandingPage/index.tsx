@@ -1,8 +1,8 @@
 import "./index.css";
+
 export default function LandingPage() {
   return (
-    <main className="w-screen h-screen relative">
-      <div className="bg-black absolute opacity-25 h-full w-full"></div>
+    <main className="w-screen h-screen relative bg-mountain bg-cover bg-no-repeat bg-center">
       <div className="h-full w-full flex flex-col absolute">
         <div className="basis-1/2 px-8 py-4">
           <h1 className="text-6xl text-white font-bold">Explore.</h1>
