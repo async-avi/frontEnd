@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Swap</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body,
+      main {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      style="
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <img
+        src="https://i.pinimg.com/736x/2c/da/e1/2cdae1326060d7f9ace3c7668ac19fc1.jpg"
+        alt="eiffel"
+        srcset=""
+        height="60%"
+        width="20%"
+        id="mainImg"
+      />
+      <button
+        id="change"
+        style="margin: 0px 0px 0px 20px; background: none; border: none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          fill="currentColor"
+          class="bi bi-arrow-right"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+          />
+        </svg>
+      </button>
+    </main>
+  </body>
+  <script type="text/javascript">
+    const main = document.querySelector("main");
+    const imageSrc = [
+      "https://i.pinimg.com/736x/2c/da/e1/2cdae1326060d7f9ace3c7668ac19fc1.jpg",
+      "https://i.pinimg.com/236x/d8/9b/d8/d89bd8497cfa110195e0a30f18879554.jpg",
+      "https://i.pinimg.com/736x/d3/2f/20/d32f203c23281f53b14e20e626a6f116.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLFptA7em2exWVd3kQWMdtmbOhsMHomWYNcbRUViHB2ClSOO4jQ_9WNqZ2t-GAo0ee5pY&usqp=CAU",
+      "https://i.pinimg.com/originals/a0/ac/ca/a0acca15036d10f43a54fc798ec1bd0d.jpg",
+      "https://encrypted-https://i.pinimg.com/736x/f7/22/26/f722267b18e56b5bb0d99757d4f9747a.jpgtbn0.gstatic.com/images?q=tbn:ANd9GcQPc1foXRVFIqxR4WOtGZKQoB-c0wexOtn9WLezMr7bnnONWqaxx1PzP1gNqBBZ6nElcCU&usqp=CAU",
+    ];
+
+    const mainImg = document.getElementById("mainImg");
+    const changeButton = document.getElementById("change");
+
+    function chanegImgUrl() {
+      let newImgUrl = imageSrc[Math.floor(Math.random() * imageSrc.length)];
+      const srcOfImg = mainImg.src;
+      if (srcOfImg != newImgUrl) {
+        mainImg.setAttribute("src", newImgUrl);
+      } else {
+        mainImg.setAttribute("src", imageSrc[0]);
+      }
+    }
+
+    changeButton.addEventListener("click", chanegImgUrl);
+  </script>
+</html>
