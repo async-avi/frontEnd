@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Man city</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      style="
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      "
+    >
+      <div>
+        <h2 style="margin-bottom: 40px; text-align: center">Man city</h2>
+        <div
+          style="
+            width: 100%;
+            height: max-content;
+            display: flex;
+            overflow-x: scroll;
+          "
+          id="playerInfo"
+        ></div>
+        <div
+          style="display: flex; width: 100%; height: max-content; padding: 20px"
+          id="posiButtons"
+        ></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

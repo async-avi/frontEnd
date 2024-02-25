@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Add</title>
+    <style>
+      ul {
+        width: 40%;
+      }
+
+      /* Ensuring list items have default styles */
+      li {
+        list-style-type: disc; /* Use disc as the bullet point */
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <h4 style="margin-bottom: 10px">Add new item</h4>
+        <input type="text" name="listItem" />
+        <button type="submit">Add</button>
+      </form>
+      <div style="margin: 20px 0px 20px 0px">
+        <h2>Your list</h2>
+      </div>
+      <ul id="list"></ul>
+    </main>
+    <script type="text/javascript">
+      let idCount = 0;
+      const form = document.querySelector("form");
+      const mainList = document.getElementById("list");
+
+      function deleteElem(id) {
+        const concernedElement = document.getElementById(id);
+        mainList.removeChild(concernedElement);
+      }
+
+      function addListItems(value) {
+        const newLiItem = document.createElement("li");
+        newLiItem.setAttribute("id", idCount++);
+        newLiItem.innerHTML = value;
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Delete";
+        deleteButton.style.marginLeft = "30%";
+        newLiItem.appendChild(deleteButton);
+        deleteButton.addEventListener("click", function () {
+          deleteElem(newLiItem.id);
+        });
+        newLiItem.style.width - "maxContent";
+        mainList.appendChild(newLiItem);
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        addListItems(form.listItem.value);
+      });
+    </script>
+  </body>
+</html>
