@@ -8,8 +8,113 @@
       * {
         padding: 0px;
         margin: 0px;
+        box-sizing: border-box;
+      }
+      body,
+      main {
+        height: 100vh;
+        width: 100%;
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div id="stopwatch">
+        <div>
+          <span id="hour">0</span>:<span id="minutes">00</span>:<span
+            id="seconds"
+            >00</span
+          >
+        </div>
+        <button id="start" style="padding: 2px 10px 2px 10px">Start</button>
+      </div>
+      <div
+        id="timer"
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          height: max-content;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h2>Timer</h2>
+        <form id="timerInp">
+          <input
+            type="number"
+            placeholder="Enter seconds for timer"
+            name="timerInput"
+            style="padding: 2px 10px 2px 10px"
+          />
+          <button type="submit">Set</button>
+        </form>
+        <h3 id="secondsGiven">0</h3>
+      </div>
+      <div
+        style="
+          width: 50%;
+          background-color: aqua;
+          height: 5%;
+          margin-top: 50px;
+          padding: 2px 20px 2px 20px;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        "
+      >
+        <button id="sw">StopWatch</button>
+        <button id="tm">Timer</button>
+      </div>
+    </main>
+    <script type="text/javascript">
+      const startButton = document.getElementById("start");
+      const secondSpan = document.getElementById("seconds");
+      const minuteSpan = document.getElementById("minutes");
+      const stopWatchToggle = document.getElementById("sw");
+      const timerToggle = document.getElementById("tm");
+      const stopWatch = document.getElementById("stopwatch");
+      const timer = document.getElementById("timer");
+
+      timer.style.display = "none";
+
+      startButton.addEventListener("click", () => {
+        setInterval(() => {
+          let seconds = parseInt(secondSpan.innerHTML);
+          let anotherSecond = seconds + 1;
+          if (anotherSecond <= 9) {
+            secondSpan.innerHTML = "0" + anotherSecond;
+          } else {
+            secondSpan.innerHTML = anotherSecond;
+          }
+          if (secondSpan.innerHTML == 60) {
+            let minutes = parseInt(minuteSpan.innerHTML);
+            let anotherMinute = minutes + 1;
+            if (anotherMinute <= 9) {
+              minuteSpan.innerHTML = "0" + anotherMinute;
+            } else {
+              minuteSpan.innerHTML = anotherMinute;
+            }
+            secondSpan.innerHTML = 0;
+          }
+        }, 1000);
+      });
+
+      timerToggle.addEventListener("click", () => {
+        stopWatch.style.display = "none";
+        timer.style.display = "flex";
+      });
+      stopWatchToggle.addEventListener("click", () => {
+        stopWatch.style.display = "block";
+        timer.style.display = "none";
+      });
+    </script>
+  </body>
 </html>
